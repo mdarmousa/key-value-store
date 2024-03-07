@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.mdarmousa.keyvaluestore;
+
+option java_multiple_files = true;
+
+message KeyValueRequest {
+  string key = 1;
+  string value = 2;
+}
+
+message KeyValueResponse {
+    string key = 1;
+    string value = 2;
+}
+
+service KeyValueService {
+  rpc save(KeyValueRequest) returns (KeyValueResponse);
+}
