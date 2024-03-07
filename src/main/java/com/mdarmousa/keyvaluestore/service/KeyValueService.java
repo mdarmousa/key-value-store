@@ -9,8 +9,23 @@ import java.util.HashMap;
 public class KeyValueService {
     HashMap<String, String> keyValueStore = new HashMap<>();
 
-    public KeyValue save(KeyValue keyValue){
+    public KeyValue save(KeyValue keyValue) {
         keyValueStore.put(keyValue.key(), keyValue.value());
         return keyValue;
+    }
+
+    public KeyValue get(String key) {
+        if (keyValueStore.containsKey(key)) {
+            return new KeyValue(key, keyValueStore.get(key));
+        }
+        throw new NullPointerException();
+    }
+
+    public KeyValue delete(String key) {
+        if (keyValueStore.containsKey(key)) {
+            var value = keyValueStore.remove(key);
+            return new KeyValue(key, value);
+        }
+        throw new NullPointerException();
     }
 }
