@@ -17,7 +17,7 @@
 		<java.version>21</java.version>
 		<protobuf.version>3.25.1</protobuf.version>
 		<protobuf-plugin.version>0.6.1</protobuf-plugin.version>
-		<grpc.version>1.57.0</grpc.version>
+		<grpc.version>1.60.0</grpc.version>
 	</properties>
 	<dependencies>
 		<dependency>
