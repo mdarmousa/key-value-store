@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package com.mdarmousa.keyvaluestore.grpc;
+
+option java_multiple_files = true;
+option java_package = "com.mdarmousa.keyvaluestore.grpc";
+
+message KeyRequest {
+  string key = 1;
+}
+
+
+message KeyValueRequest {
+  string key = 1;
+  string value = 2;
+}
+
+message KeyValueResponse {
+  string key = 1;
+  string value = 2;
+}
+
+service KeyValueService {
+  rpc save(KeyValueRequest) returns (KeyValueResponse);
+  rpc get(KeyRequest) returns (KeyValueResponse);
+  rpc delete(KeyRequest) returns (KeyValueResponse);
+}
